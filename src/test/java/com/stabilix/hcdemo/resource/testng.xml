@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="true" >
+
+
+
+       
+ <listeners>
+
+ <listener class-name="org.uncommons.reportng.HTMLReporter"></listener>
+ <listener class-name="org.uncommons.reportng.JUnitXMLReporter"></listener>
+
+
+</listeners>
+
+ 
+  
+   <parameter name="username" value="hc38sprint23"></parameter>
+   <parameter name="password" value="222222"></parameter>
+   <parameter name="wrongpassword" value="111111"></parameter>
+   
+     <parameter name="Webbrowser" value="firefox"></parameter>
+    <parameter name="url" value="https://nist.healthcompanion.com/HealthCompanion/phr/Home.action"></parameter>
+    <parameter name="drurl" value="https://sqa3.drsysehr.com/Home/Login/Drdev"></parameter>
+  <!--   <parameter name="rurl" value="https://nist.healthcompanion.com/HealthCompanion/roamingportal/RoamingPortal.action?InterfaceCode=2&emrId=DR&mailLink=y#loginPage"></parameter>--> 
+    
+   <!--InterfaceCode=2&emrId=DR&mailLink=y#loginPage  --> 
+   
+  
+
+  <test name="Test the Valid login scenarios" preserve-order="true" enabled="false">
+
+      
+     <parameter name="Webbrowser" value="firefox"></parameter>
+    <parameter name="url" value="https://nist.healthcompanion.com/HealthCompanion/phr/Home.action"></parameter> 
+
+   
+    <classes>
+      <class name="com.stabilix.hcdemo.test.LoginTest">
+          <methods>
+               <!--    <exclude name="checkInvalidLogin"></exclude> -->
+                <!--  <include name="checkInvalidLogin"></include> -->
+                <!--  <include name="checkValidLogin"></include>  -->
+          </methods>
+      </class>
+      
+      
+    </classes> 
+    
+   </test> 
+   
+   
+   <test name="Test the Roaming Linkage scnearios" preserve-order="true"  enabled ="false">
+ 
+
+   
+    <classes>
+    
+    
+
+      
+      <class name="com.stabilix.hcdemo.test.HcNewMemberRoamingRegistrationTest" >
+      
+          <methods>
+               <!--    <exclude name="checkInvalidLogin"></exclude> -->
+                <!--  <include name="newMemberRoamingRegistration"></include> -->
+                
+                 <exclude name= "newMemberRoamingRegistration"> </exclude>
+                 
+          </methods>
+          
+      </class> 
+      
+<class name="com.stabilix.hcdemo.test.HcHomePageTest">
+   <methods>
+          
+          <include name="summaryCcdVerification"></include> 
+            
+          </methods>
+   </class>
+    </classes>
+    
+   </test>
+   
+   
+     <test name="Test the Health Record scenarios" preserve-order="true" enabled="false">
+
+      
+    <parameter name="Webbrowser" value="firefox"></parameter>
+    <parameter name="url" value="https://nist.healthcompanion.com/HealthCompanion/phr/Home.action"></parameter>
+   
+   
+    <classes>
+      <class name="com.stabilix.hcdemo.test.HcHealthRecordTest">
+          <methods>
+               <!--    <exclude name="checkInvalidLogin"></exclude> -->
+                <include name="problemAddVerification"></include>
+          </methods>
+      </class>
+      
+      
+    </classes>
+    
+   </test>
+   
+   <test name="Test the forgot username and password scenarios" preserve-order="true" enabled="true">
+
+      
+ <parameter name="Webbrowser" value="firefox"></parameter>
+    <parameter name="url" value="https://nist.healthcompanion.com/HealthCompanion/phr/Home.action"></parameter>
+   
+   
+   
+    <classes>
+      <class name="com.stabilix.hcdemo.test.HcForgetUsernameTest">
+          <methods>
+             
+                <include name="HcForgetUsernameTest"></include>
+                
+          </methods>
+      </class>
+      
+           
+      
+      
+    </classes>
+    
+   </test>
+   
+   
+  
+   
+   
+   <!-- Test -->
+  
+  
+  
+  
+</suite> <!-- Suite -->

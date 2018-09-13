@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]">
+  <parameter name="password" value="222222"/>
+  <parameter name="Webbrowser" value="firefox"/>
+  <parameter name="wrongpassword" value="111111"/>
+  <parameter name="drurl" value="https://sqa3.drsysehr.com/Home/Login/Drdev"/>
+  <parameter name="url" value="https://nist.healthcompanion.com/HealthCompanion/phr/Home.action"/>
+  <parameter name="username" value="hc38sprint23"/>
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  <test name="Test the forgot username and password scenarios(failed)">
+    <parameter name="Webbrowser" value="firefox"/>
+    <parameter name="url" value="https://nist.healthcompanion.com/HealthCompanion/phr/Home.action"/>
+    <classes>
+      <class name="com.stabilix.hcdemo.test.HcForgetUsernameTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="loginIntialize"/>
+          <include name="startBrowser"/>
+          <include name="getResult"/>
+          <include name="forgotUsernameTest"/>
+        </methods>
+      </class> <!-- com.stabilix.hcdemo.test.HcForgetUsernameTest -->
+    </classes>
+  </test> <!-- Test the forgot username and password scenarios(failed) -->
+</suite> <!-- Failed suite [Suite] -->
