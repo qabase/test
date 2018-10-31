@@ -28,12 +28,12 @@
    
   
 
-  <test name="Test the Valid login scenarios" preserve-order="true" enabled="false">
+  <test name="Test the Valid login scenarios" preserve-order="true" enabled="true">
 
       
-     <parameter name="Webbrowser" value="firefox"></parameter>
+  <!--     <parameter name="Webbrowser1" value="firefox1"></parameter>
     <parameter name="url" value="https://nist.healthcompanion.com/HealthCompanion/phr/Home.action"></parameter> 
-
+-->
    
     <classes>
       <class name="com.stabilix.hcdemo.test.LoginTest">

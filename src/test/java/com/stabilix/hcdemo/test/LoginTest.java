@@ -6,9 +6,10 @@ import org.testng.AssertJUnit;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.annotations.Parameters;
 
 import com.aventstack.extentreports.Status;
-import com.beust.jcommander.Parameters;
+//import com.beust.jcommander.Parameters;
 import com.stabilix.hcdemo.commoncode;
 import com.stabilix.hcdemo.hcDataProvider;
 import com.stabilix.hcdemo.pageobjects.HcHomepage;
@@ -31,9 +32,9 @@ public class LoginTest extends commoncode{
   WebElement userprofile;
 
 
-	 @BeforeClass  
-	 @Parameters({"Webbrowser","url"})
-	  public void startBrowser(String Webbrowser, String url)
+     @BeforeClass 
+     @Parameters({"Webbrowser","url"})
+	 public void startBrowser(String Webbrowser, String url)
 	   {
 		  //getDriver("firefox","https://nist.healthcompanion.com/HealthCompanion/phr/Home.action");
 		 getDriver(Webbrowser,url);
